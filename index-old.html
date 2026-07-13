@@ -8,7 +8,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+Bengali:wght@400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -26,18 +26,12 @@
 
       <h1 class="name">Osama</h1>
       <p class="role">M.Sc. Student, Dept. of CSE</p>
+      <p class="location">📍 Nilphamari, Bangladesh</p>
 
-      <div class="contact-block">
-        <p><span>Personal</span><a href="mailto:osamasohag39@gmail.com">osamasohag39@gmail.com</a></p>
-        <p><span>Official</span><a href="mailto:your.official@university.edu">your.official@university.edu</a></p>
-      </div>
+      <p class="tagline">Studying how machines <em>forget</em> — machine unlearning for morphologically rich Bangla text.</p>
 
-      <p class="tagline">
-        M.Sc. researcher studying machine unlearning for morphologically rich languages.
-        Also building hands-on engineering skills, one project at a time.
-      </p>
-
-      <nav class="social-links" aria-label="Social links">
+      <nav class="social-links" aria-label="Social and contact links">
+        <a href="mailto:osamasohag39@gmail.com">Email</a>
         <a href="https://github.com/123Osama" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/osama39/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://scholar.google.com/citations?user=UkB_a_IAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
@@ -60,70 +54,59 @@
   <main class="content">
 
     <nav class="topnav" aria-label="Section navigation">
-      <a href="#home">Home</a>
+      <a href="#about">About</a>
       <a href="#research">Research</a>
       <a href="#projects">Projects</a>
       <a href="#publications">Publications</a>
       <a href="#skills">Skills</a>
-      <a href="#thoughts">My Thought</a>
+      <a href="#updates">Updates</a>
       <a href="#contact">Contact</a>
     </nav>
 
-    <!-- ===== HOME ===== -->
-    <section id="home" class="section hero">
-      <p class="eyebrow">Hello, I'm Osama</p>
-      <h2 class="hero-line">I build benchmarks for <span class="hl">unlearning</span><br>in languages that don't forget easily.</h2>
+    <!-- ===== HERO / SIGNATURE MORPHOLOGY DEMO ===== -->
+    <section class="hero">
+      <p class="eyebrow">হ্যালো, আমি ওসামা — Hello, I'm Osama</p>
+      <h2 class="hero-line">I build benchmarks for <span class="hl">unlearning</span><br>in a language built from <span class="hl">morphemes</span>.</h2>
 
       <p class="hero-sub">
-        Most machine unlearning research is built and tested on English. My thesis asks what
-        happens when you ask a model to <em>forget</em> something in a language like Bangla,
-        where a single word can carry a root, tense, number, and case all stitched together.
-        Does that structure make forgetting harder to verify — or easier to fake?
+        Bangla words carry their grammar inside them — tense, number, and case are stitched onto
+        a root through layers of suffixes. My thesis asks a simple question with a hard answer:
+        when we ask a language model to <em>forget</em> something, does that same morphological
+        richness make forgetting harder — or easier to hide?
       </p>
 
-      <!-- Signature interactive element: morpheme decomposition, English example -->
+      <!-- Signature interactive element: live morpheme decomposition -->
       <div class="morph-demo" id="morphDemo">
         <p class="morph-caption">Tap a piece of the word</p>
-        <div class="morph-word" role="group" aria-label="Word broken into morphemes">
-          <button class="morph" data-gloss="un- — negation prefix, “not”">un</button>
-          <button class="morph" data-gloss="forget — the root verb, what's being removed">forget</button>
-          <button class="morph" data-gloss="-table — suffix, “capable of being”">table</button>
+        <div class="morph-word" role="group" aria-label="Bangla word broken into morphemes">
+          <button class="morph" data-label="root" data-gloss="বিদ্যালয় — “school” (the root noun)">বিদ্যালয়</button>
+          <button class="morph" data-label="plural" data-gloss="গুলো — plural marker, “-s”">গুলো</button>
+          <button class="morph" data-label="locative" data-gloss="তে — locative case, “in / at”">তে</button>
         </div>
-        <p class="morph-meaning">unforgettable <span>→</span> <span id="morphGloss">one word, three layers of meaning fused together — the same layering that makes Bangla unlearning hard to measure.</span></p>
+        <p class="morph-meaning">বিদ্যালয়গুলোতে <span>→</span> <span id="morphGloss">“in the schools” — one word, three layers of meaning fused together.</span></p>
       </div>
+    </section>
 
-      <!-- Personal info / bio -->
-      <div class="bio">
-        <p>
-          I'm an M.Sc. student in Computer Science &amp; Engineering, currently in the early
-          phase of my thesis. I work at the intersection of <strong>machine unlearning</strong>
-          and <strong>Bangla NLP</strong> — figuring out whether existing unlearning methods,
-          mostly designed and tested on English, actually hold up against a morphologically
-          rich, low-resource language.
-        </p>
-        <p>
-          Outside of research, I'm slowly building up hands-on engineering skills — Python,
-          Flask, Django, and full-stack project work — and I have a long-running interest in
-          Islamic history. [Edit this paragraph to make it sound like you.]
-        </p>
-      </div>
-
-      <!-- Scrollable updates window -->
-      <div class="updates-box">
-        <h3 class="updates-title">Updates</h3>
-        <ul class="timeline">
-          <li><span class="tdate">[Month, Year]</span> Selected thesis direction: machine unlearning for morphologically rich Bangla text.</li>
-          <li><span class="tdate">[Month, Year]</span> Began benchmark schema design for the unlearning study.</li>
-          <li><span class="tdate">[Month, Year]</span> [Add your next milestone here.]</li>
-          <li><span class="tdate">[Month, Year]</span> [Add another update here.]</li>
-          <li><span class="tdate">[Month, Year]</span> [Add another update here.]</li>
-        </ul>
-      </div>
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section">
+      <h3 class="section-title"><span class="bn">পরিচিতি</span> About</h3>
+      <p>
+        I'm an M.Sc. student in Computer Science &amp; Engineering, currently in the early phase of
+        my thesis. I work at the intersection of <strong>machine unlearning</strong> and
+        <strong>Bangla NLP</strong> — figuring out whether existing unlearning methods, mostly
+        designed and tested on English, actually hold up against a morphologically rich,
+        low-resource language.
+      </p>
+      <p>
+        Outside of research, I'm slowly building up hands-on engineering skills — Python, Flask,
+        Django, and full-stack project work — and I have a long-running interest in Islamic
+        history. [Edit this paragraph to make it sound like you.]
+      </p>
     </section>
 
     <!-- ===== RESEARCH ===== -->
     <section id="research" class="section">
-      <h3 class="section-title">Research — M.Sc. Thesis</h3>
+      <h3 class="section-title"><span class="bn">গবেষণা</span> Research — M.Sc. Thesis</h3>
 
       <div class="research-card">
         <p class="research-tag">Working title</p>
@@ -168,7 +151,7 @@
 
     <!-- ===== PROJECTS ===== -->
     <section id="projects" class="section">
-      <h3 class="section-title">Projects</h3>
+      <h3 class="section-title"><span class="bn">প্রজেক্ট</span> Projects</h3>
 
       <div class="project-grid">
         <article class="project-card">
@@ -197,7 +180,7 @@
 
     <!-- ===== PUBLICATIONS ===== -->
     <section id="publications" class="section">
-      <h3 class="section-title">Publications</h3>
+      <h3 class="section-title"><span class="bn">প্রকাশনা</span> Publications</h3>
       <p class="edit-note">
         No publications yet — this section is ready for when your thesis work turns into a
         paper. Suggested format for each entry:
@@ -210,7 +193,7 @@
 
     <!-- ===== SKILLS ===== -->
     <section id="skills" class="section">
-      <h3 class="section-title">Skills</h3>
+      <h3 class="section-title"><span class="bn">দক্ষতা</span> Skills</h3>
       <div class="skills-grid">
         <div>
           <p class="research-tag">Languages</p>
@@ -231,37 +214,21 @@
       </div>
     </section>
 
-    <!-- ===== MY THOUGHT (blog) ===== -->
-    <section id="thoughts" class="section">
-      <h3 class="section-title">My Thought</h3>
-      <p class="edit-note">A running collection of lines and observations from life. Add a new entry any time — newest at the top.</p>
-
-      <div class="thought-list">
-        <article class="thought-item">
-          <p class="tdate">[Month, Year]</p>
-          <p class="thought-text">[Write a line or short reflection you want to remember.]</p>
-        </article>
-        <article class="thought-item">
-          <p class="tdate">[Month, Year]</p>
-          <p class="thought-text">[Another observation goes here.]</p>
-        </article>
-        <article class="thought-item">
-          <p class="tdate">[Month, Year]</p>
-          <p class="thought-text">[Keep adding — copy this block for each new entry.]</p>
-        </article>
-      </div>
+    <!-- ===== UPDATES ===== -->
+    <section id="updates" class="section">
+      <h3 class="section-title"><span class="bn">আপডেট</span> Updates</h3>
+      <ul class="timeline">
+        <li><span class="tdate">[Month, Year]</span> Selected thesis direction: machine unlearning for morphologically rich Bangla text.</li>
+        <li><span class="tdate">[Month, Year]</span> Began benchmark schema design for the unlearning study.</li>
+        <li><span class="tdate">[Month, Year]</span> [Add your next milestone here.]</li>
+      </ul>
     </section>
 
     <!-- ===== CONTACT ===== -->
     <section id="contact" class="section">
-      <h3 class="section-title">Contact</h3>
-      <p>Best way to reach me is by email — happy to talk Bangla NLP, unlearning, or Islamic history.</p>
-
-      <div class="contact-details">
-        <p><span>Personal email</span><a href="mailto:osamasohag39@gmail.com">osamasohag39@gmail.com</a></p>
-        <p><span>Official email</span><a href="mailto:your.official@university.edu">your.official@university.edu</a></p>
-        <p><span>Address</span>Nilphamari, Rangpur Division, Bangladesh</p>
-      </div>
+      <h3 class="section-title"><span class="bn">যোগাযোগ</span> Contact</h3>
+      <p>Best way to reach me is by email — I'm always happy to talk Bangla NLP, unlearning, or Islamic history.</p>
+      <p class="contact-email"><a href="mailto:your.email@example.com">your.email@example.com</a></p>
     </section>
 
     <footer class="page-footer">
