@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Osama — M.Sc. CSE Student | Bangla NLP &amp; Machine Unlearning</title>
+<meta name="description" content="Osama — M.Sc. student in Computer Science &amp; Engineering, researching machine unlearning for morphologically rich Bangla text.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+Bengali:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      <div class="avatar">
+        <img src="images/profile.jpg" alt="Osama" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="avatar-fallback">O</div>
+      </div>
+
+      <h1 class="name">Osama</h1>
+      <p class="role">M.Sc. Student, Dept. of CSE</p>
+      <p class="location">📍 Nilphamari, Bangladesh</p>
+
+      <p class="tagline">Studying how machines <em>forget</em> — machine unlearning for morphologically rich Bangla text.</p>
+
+      <nav class="social-links" aria-label="Social and contact links">
+        <a href="mailto:your.email@example.com">Email</a>
+        <a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
+      </nav>
+
+      <a class="cv-btn" href="cv.pdf" target="_blank" rel="noopener">Download CV ↓</a>
+
+      <ul class="quick-facts">
+        <li><span>Focus</span>Machine Unlearning · Bangla NLP</li>
+        <li><span>Target venue</span>ACM TALLIP</li>
+        <li><span>Lab</span>Your Lab / Advisor Name</li>
+      </ul>
+    </div>
+
+    <p class="sidebar-footer">© <span id="year"></span> Osama</p>
+  </aside>
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <main class="content">
+
+    <nav class="topnav" aria-label="Section navigation">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#skills">Skills</a>
+      <a href="#updates">Updates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- ===== HERO / SIGNATURE MORPHOLOGY DEMO ===== -->
+    <section class="hero">
+      <p class="eyebrow">হ্যালো, আমি ওসামা — Hello, I'm Osama</p>
+      <h2 class="hero-line">I build benchmarks for <span class="hl">unlearning</span><br>in a language built from <span class="hl">morphemes</span>.</h2>
+
+      <p class="hero-sub">
+        Bangla words carry their grammar inside them — tense, number, and case are stitched onto
+        a root through layers of suffixes. My thesis asks a simple question with a hard answer:
+        when we ask a language model to <em>forget</em> something, does that same morphological
+        richness make forgetting harder — or easier to hide?
+      </p>
+
+      <!-- Signature interactive element: live morpheme decomposition -->
+      <div class="morph-demo" id="morphDemo">
+        <p class="morph-caption">Tap a piece of the word</p>
+        <div class="morph-word" role="group" aria-label="Bangla word broken into morphemes">
+          <button class="morph" data-label="root" data-gloss="বিদ্যালয় — “school” (the root noun)">বিদ্যালয়</button>
+          <button class="morph" data-label="plural" data-gloss="গুলো — plural marker, “-s”">গুলো</button>
+          <button class="morph" data-label="locative" data-gloss="তে — locative case, “in / at”">তে</button>
+        </div>
+        <p class="morph-meaning">বিদ্যালয়গুলোতে <span>→</span> <span id="morphGloss">“in the schools” — one word, three layers of meaning fused together.</span></p>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section">
+      <h3 class="section-title"><span class="bn">পরিচিতি</span> About</h3>
+      <p>
+        I'm an M.Sc. student in Computer Science &amp; Engineering, currently in the early phase of
+        my thesis. I work at the intersection of <strong>machine unlearning</strong> and
+        <strong>Bangla NLP</strong> — figuring out whether existing unlearning methods, mostly
+        designed and tested on English, actually hold up against a morphologically rich,
+        low-resource language.
+      </p>
+      <p>
+        Outside of research, I'm slowly building up hands-on engineering skills — Python, Flask,
+        Django, and full-stack project work — and I have a long-running interest in Islamic
+        history. [Edit this paragraph to make it sound like you.]
+      </p>
+    </section>
+
+    <!-- ===== RESEARCH ===== -->
+    <section id="research" class="section">
+      <h3 class="section-title"><span class="bn">গবেষণা</span> Research — M.Sc. Thesis</h3>
+
+      <div class="research-card">
+        <p class="research-tag">Working title</p>
+        <h4>Machine Unlearning in Morphologically Rich Bangla Text: A Benchmark Study</h4>
+
+        <p>
+          Most machine unlearning research benchmarks are built for English. This thesis
+          constructs a benchmark for Bangla and studies how unlearning methods behave when
+          the language itself encodes meaning through dense inflection and compounding —
+          asking whether "forgetting" a root concept in Bangla also forgets its many
+          morphological variants, or leaves them dangerously intact.
+        </p>
+
+        <div class="research-grid">
+          <div>
+            <p class="research-tag">Target models</p>
+            <p>BanglaT5, BanglaNLG</p>
+          </div>
+          <div>
+            <p class="research-tag">Unlearning methods</p>
+            <p>Gradient ascent · NPO / APO-style preference optimization · embedding-corrupted prompts</p>
+          </div>
+          <div>
+            <p class="research-tag">Target venue</p>
+            <p>ACM TALLIP</p>
+          </div>
+          <div>
+            <p class="research-tag">Timeline</p>
+            <p>~24–34 weeks, phased</p>
+          </div>
+        </div>
+
+        <p class="research-tag" style="margin-top: 1.5rem;">Research questions</p>
+        <ul class="rq-list">
+          <li>Do unlearning methods forget a concept's morphological variants along with its base form, in a morphologically rich language?</li>
+          <li>How does Bangla's morphological complexity affect the accuracy–forgetting tradeoff compared to English benchmarks?</li>
+          <li>Can a benchmark be built that fairly measures unlearning quality across inflected and compound Bangla forms?</li>
+        </ul>
+        <p class="edit-note">[Replace the RQs above with your actual finalized versions.]</p>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section">
+      <h3 class="section-title"><span class="bn">প্রজেক্ট</span> Projects</h3>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <h4>Bangla Book Recommendation System</h4>
+          <p>Flask-based collaborative filtering recommender built on the Book-Crossing dataset.</p>
+          <div class="tags"><span>Python</span><span>Flask</span><span>Collaborative Filtering</span></div>
+          <a href="#" target="_blank" rel="noopener">View repo →</a>
+        </article>
+
+        <article class="project-card">
+          <h4>Daily Muslim Life Manager</h4>
+          <p>Full-stack app for daily prayer, habit, and routine tracking, built end-to-end.</p>
+          <div class="tags"><span>Django</span><span>React</span></div>
+          <a href="#" target="_blank" rel="noopener">View repo →</a>
+        </article>
+
+        <article class="project-card">
+          <h4>Git &amp; GitHub Lab Manual</h4>
+          <p>A university-standard lab manual walking students through Git and GitHub fundamentals.</p>
+          <div class="tags"><span>Documentation</span><span>Git</span></div>
+          <a href="#" target="_blank" rel="noopener">View doc →</a>
+        </article>
+      </div>
+      <p class="edit-note">[Swap in real repo links, and add/remove project cards as needed.]</p>
+    </section>
+
+    <!-- ===== PUBLICATIONS ===== -->
+    <section id="publications" class="section">
+      <h3 class="section-title"><span class="bn">প্রকাশনা</span> Publications</h3>
+      <p class="edit-note">
+        No publications yet — this section is ready for when your thesis work turns into a
+        paper. Suggested format for each entry:
+      </p>
+      <div class="pub-item">
+        <p class="pub-title">[Paper title]</p>
+        <p class="pub-meta">[Authors] · [Venue, Year] · <a href="#">[PDF]</a> · <a href="#">[Code]</a></p>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="section">
+      <h3 class="section-title"><span class="bn">দক্ষতা</span> Skills</h3>
+      <div class="skills-grid">
+        <div>
+          <p class="research-tag">Languages</p>
+          <p>Python, JavaScript</p>
+        </div>
+        <div>
+          <p class="research-tag">ML / NLP</p>
+          <p>PyTorch, Transformers (Hugging Face), scikit-learn</p>
+        </div>
+        <div>
+          <p class="research-tag">Web</p>
+          <p>Flask, Django, React</p>
+        </div>
+        <div>
+          <p class="research-tag">Tools</p>
+          <p>Git, GitHub, LaTeX</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== UPDATES ===== -->
+    <section id="updates" class="section">
+      <h3 class="section-title"><span class="bn">আপডেট</span> Updates</h3>
+      <ul class="timeline">
+        <li><span class="tdate">[Month, Year]</span> Selected thesis direction: machine unlearning for morphologically rich Bangla text.</li>
+        <li><span class="tdate">[Month, Year]</span> Began benchmark schema design for the unlearning study.</li>
+        <li><span class="tdate">[Month, Year]</span> [Add your next milestone here.]</li>
+      </ul>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section">
+      <h3 class="section-title"><span class="bn">যোগাযোগ</span> Contact</h3>
+      <p>Best way to reach me is by email — I'm always happy to talk Bangla NLP, unlearning, or Islamic history.</p>
+      <p class="contact-email"><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+    </section>
+
+    <footer class="page-footer">
+      <p>Built with plain HTML/CSS/JS · Hosted on GitHub Pages</p>
+    </footer>
+
+  </main>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
