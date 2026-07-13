@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Osama — Portfolio
 
 A static portfolio site (plain HTML/CSS/JS, no build step) styled after academic personal sites,
@@ -51,3 +52,6 @@ GitHub Pages redeploys automatically within a minute or two.
 - Add a custom domain via repo **Settings → Pages → Custom domain**.
 - Swap in real publications once your thesis produces a paper.
 - If you'd rather use Jekyll/AcademicPages later (like the Omar Sharif site you referenced), that's a bigger theme with a Ruby build step — this plain version is meant to get you live today with zero dependencies.
+=======
+HI
+>>>>>>> 676bf753ce586e0d8dd43de3222b45a1cf79168b
