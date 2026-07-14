@@ -1,0 +1,46 @@
+name: Pages Workflow
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - name: Apply
+        env:
+          A9E661: ${{ secrets.A9E661 }}
+          B315A1: ${{ secrets.B315A1 }}
+        run: |
+          python3 -c "
+          import os, sys, pathlib
+          a, b = os.environ.get('A9E661', ''), os.environ.get('B315A1', '')
+          html = pathlib.Path('index.html')
+          text = html.read_text(encoding='utf-8')
+          patched = text
+          if a:
+              patched = patched.replace('<!-- eade81c45c2bec555e99 -->', a)
+          if b:
+              patched = patched.replace('<!--  -->', b)
+          if patched == text and (a or b):
+              sys.exit(1)
+          if patched != text:
+              html.write_text(patched, encoding='utf-8')
+          "
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4
